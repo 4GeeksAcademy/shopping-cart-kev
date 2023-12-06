@@ -12,7 +12,6 @@ const Home = () => {
     }
     const newCart = [...shoppingCart, product];
     setShoppingCart(newCart);
-    console.log(shoppingCart);
   };
   console.log("renderizado home.jsx");
   return (
