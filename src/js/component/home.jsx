@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import productos from "../listProducts";
 import Navbar from "./navBar";
 import Card from "./card";
-
+import Footer from "./footer";
 const Home = () => {
   const [shoppingCart, setShoppingCart] = useState([]);
 
@@ -14,7 +14,7 @@ const Home = () => {
     setShoppingCart(newCart);
     console.log(shoppingCart);
   };
-
+  console.log("renderizado home.jsx");
   return (
     <>
       <Navbar />
@@ -39,6 +39,7 @@ const Home = () => {
           })}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

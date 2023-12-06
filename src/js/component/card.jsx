@@ -10,6 +10,8 @@ const Card = ({
   handleNewProduct,
   id,
 }) => {
+  console.log("renderizado Card.jsx");
+
   return (
     <>
       <div className="card">
