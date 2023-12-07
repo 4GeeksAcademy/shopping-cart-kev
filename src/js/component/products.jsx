@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import productos from "../listProducts";
 import Card from "./card";
+import ModalCart from "./modalCart";
 
 const Products = () => {
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -13,11 +14,13 @@ const Products = () => {
     setShoppingCart(newCart);
   };
 
+  const removeProduct = (product) => {
+    const newCart = shoppingCart.filter((element) => element.id !== product.id);
+    setShoppingCart(newCart);
+  };
+
   return (
     <>
-      <div>
-        <p>carrito {shoppingCart.length}</p>
-      </div>
       <div className="row gap-5">
         {productos.map((product) => {
           return (
@@ -34,13 +37,7 @@ const Products = () => {
           );
         })}
       </div>
-      <div className="cart-fab">
-        <div className="container d-flex justify-content-end">
-          <button className="btn btn-warning">
-            <span>Modal</span>
-          </button>
-        </div>
-      </div>
+      <ModalCart shoppingCart={shoppingCart} removeProduct={removeProduct} />
     </>
   );
 };
