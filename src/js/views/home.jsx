@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Navbar from "./navBar";
-import Footer from "./footer";
-import Products from "./products";
+import Navbar from "../component/navBar";
+import Footer from "../component/footer";
+import Products from "../component/products";
 const Home = () => {
   return (
     <>
-      <Navbar />
       <div className="container">
         <Products />
       </div>
